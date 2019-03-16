@@ -1,2 +1,2 @@
 # notes
-A library of notes for my future self
+A collection of notes for my future self
