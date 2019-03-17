@@ -1,0 +1,9 @@
+---
+layout: default
+---
+
+<section>
+    <h1><a href="{{ note.url | relative_url }}" class="nounderline">Note #{{ page.slug }}:  {{ page.title }}</a></h1>
+    <span class="grey small">{{ page.date | date: "%b %d, %y" }} </span>
+    <p>{{ page.content | markdownify }}</p>
+</section>

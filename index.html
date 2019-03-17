@@ -1,10 +1,11 @@
 ---
-title: My First Page
+title: Notebook
 ---
 
-{% for note in site.notes %}
+{% for note in site.notes reversed %}
     <section>
-        <h1>{{ note.title }}: {{ note.title }}</h1>
+        <h1><a href="{{ note.url | relative_url }}" class="nounderline">Note #{{ note.slug }}:  {{ note.title }}</a></h1>
+        <span class="grey small">{{ note.date | date: "%b %d, %y" }} </span>
         <p>{{ note.content | markdownify }}</p>
     </section>
 {% endfor %}

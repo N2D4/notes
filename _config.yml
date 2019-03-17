@@ -3,6 +3,14 @@ defaults:
     scope:
       path: ""
     values:
-      layout: "default"
+      layout: default
+  -
+    scope:
+      path: "_notes"
+    values:
+      layout: note
+      type: note
 collections:
-  - notes
+  notes:
+    permalink: /:slug
+    output: true

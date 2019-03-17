@@ -2,12 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }} - Notes</title>
-    <link rel="stylesheet" href="style.css">
+    <title>
+        {% if page.type == 'note' %}
+            #{{ page.slug }}: {{ page.title }} - 
+        {% endif %}
+        Notes
+    </title>
+    <link rel="stylesheet" href='{{ "style.css" | relative_url }}'>
   </head>
   <body>
     <header>
-        <h1 class="aligncenter"><a href="index.html" class="nounderline">Notebook</a></h1>
+        <h1 class="aligncenter"><a href='{{ "index.html" | relative_url }}' class="nounderline">Notes</a></h1>
         <div class="grey aligncenter">Tips for my future self</div>
     </header>
     {{ content }}
