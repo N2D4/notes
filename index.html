@@ -6,6 +6,11 @@ title: Notebook
     <section>
         <h1><a href="{{ note.url | relative_url }}" class="nounderline">Note #{{ note.slug }}:  {{ note.title }}</a></h1>
         <span class="grey small">{{ note.date | date: "%b %d, %y" }} </span>
-        <p>{{ note.content | markdownify }}</p>
+        <p>{{ note.excerpt | markdownify }}
+        
+        {% if note.excerpt != note.content %}
+            <a class="nounderline" href="{{ note.url | relative_url }}">Read more...</a>
+        {% endif %}
+        </p>
     </section>
 {% endfor %}
